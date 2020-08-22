@@ -18,6 +18,8 @@ namespace Platformer
 
         [HideInInspector] public bool Jump { get { return MobileController.action["Jump"]; } }
         [HideInInspector] public bool Roll { get { return MobileController.action["Roll"]; } }
+        [HideInInspector] public bool Duck { get { return MobileController.action["Duck"]); } }
+        [HideInInspector] public bool Rewind { get { return MobileController.action["Rewind"]); } }
         [HideInInspector] public bool MeleeAttack { get { return MobileController.action["MeleeAttack"]; } }
         [HideInInspector] public bool RangeAttack { get { return MobileController.action["RangeAttack"]; } }
 
@@ -27,6 +29,8 @@ namespace Platformer
 
         [HideInInspector] public bool Jump { get { return Input.GetKeyDown(inputConfig.Keys["Jump"]); } }
         [HideInInspector] public bool Roll { get { return Input.GetKeyDown(inputConfig.Keys["Roll"]); } }
+        [HideInInspector] public bool Duck { get { return Input.GetKeyDown(inputConfig.Keys["Duck"]); } }
+        [HideInInspector] public bool Rewind { get { return Input.GetKeyDown(inputConfig.Keys["Rewind"]); } }
         [HideInInspector] public bool MeleeAttack { get { return Input.GetKeyDown(inputConfig.Keys["MeleeAttack"]); } }
         [HideInInspector] public bool RangeAttack { get { return Input.GetKeyDown(inputConfig.Keys["RangeAttack"]); } }
 

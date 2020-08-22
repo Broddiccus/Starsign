@@ -48,7 +48,7 @@ namespace Platformer
             {
                 Vector3 newPos = new Vector3(player.position.x + offset.x, player.position.y + offset.y, -1); //Local vector get player position
 
-                self.fieldOfView = Mathf.Lerp(self.fieldOfView, 85, smoothSpeed * Time.deltaTime);
+                self.orthographicSize = Mathf.Lerp(self.orthographicSize, 0.7f, smoothSpeed * Time.deltaTime);
 
                 transform.position = Vector3.Lerp(transform.position, newPos, smoothSpeed * Time.deltaTime); //Set camera position smooth
 
@@ -58,8 +58,8 @@ namespace Platformer
             {
                 Vector3 newPos = new Vector3(CamEditPOS.position.x + offset.x, CamEditPOS.position.y + offset.y, -1); //Local vector get player position
 
-                self.fieldOfView = Mathf.Lerp(self.fieldOfView, 165, smoothSpeed * Time.deltaTime);
-
+                self.orthographicSize = Mathf.Lerp(self.orthographicSize, 2.0f, smoothSpeed * Time.deltaTime);
+                
                 transform.position = Vector3.Lerp(transform.position, newPos, smoothSpeed * Time.deltaTime); //Set camera position smooth
 
                 transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, cameraYPosMin, cameraYPosMax), transform.position.z); //make clamp

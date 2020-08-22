@@ -64,12 +64,28 @@ namespace Platformer
                     
                 }
                 Roll();
+                Duck();
+                Rewind();
                 //Attack();
                 Animation();
             }
 
         }
-
+        public void Rewind()
+        {
+            
+            if (inputManager.Rewind && GameManager.Instance.currLev > 0)
+            {
+                GameManager.Instance.LevelReset();
+            }
+        }
+        public void Duck()
+        {
+            if (inputManager.Duck && isGrounded)
+            {
+                //duck anim here
+            }
+        }
         //Move method
         public void Move()
         {
@@ -154,28 +170,28 @@ namespace Platformer
 
         void LadderClimb()
         {
-            if (onLadder) //check lader status
-            {
-                if (inputManager.Vertical != 0)
-                {
-                    //isClimping = true; 
-                    rigid2D.velocity = Vector2.up * inputManager.Vertical * moveSpeed; //move up or down
-                }
-                else
-                {
-                    rigid2D.velocity = Vector2.zero; 
-                }
+            //if (onLadder) //check lader status
+            //{
+            //    if (inputManager.Vertical != 0)
+            //    {
+            //        //isClimping = true; 
+            //        rigid2D.velocity = Vector2.up * inputManager.Vertical * moveSpeed; //move up or down
+            //    }
+            //    else
+            //    {
+            //        rigid2D.velocity = Vector2.zero; 
+            //    }
 
-            }
-            else //if leave ladder
-            {
-                isClimping = false;
-            }
+            //}
+            //else //if leave ladder
+            //{
+            //    isClimping = false;
+            //}
 
-            if (onLadder)
-                rigid2D.gravityScale = 0;
-            else
-                rigid2D.gravityScale = 1;
+            //if (onLadder)
+            //    rigid2D.gravityScale = 0;
+            //else
+            //    rigid2D.gravityScale = 1;
         }
 
         //Death event
@@ -203,6 +219,10 @@ namespace Platformer
                 isGrounded = false; 
             }
 
+        }
+        public void Die()
+        {
+            Debug.Log("died");
         }
 
 
