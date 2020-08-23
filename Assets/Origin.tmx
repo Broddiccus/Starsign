@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="39">
+ <tileset firstgid="1" name="god won't let me die" tilewidth="16" tileheight="16" tilecount="464" columns="29">
+  <image source="Origin Background Tiles.png" width="464" height="256"/>
+ </tileset>
+ <layer id="4" name="Tile Layer 3" width="100" height="100">
+  <data encoding="base64" compression="zstd">
+   KLUv/WBAm7URAIIIGRyggUEAiELWjPeSYEkn+zc8QuBBQaYweg5DGPIdbVuzNtiT7lsQKQyioysBJIdL4pvlcqLuoMLwZLKGYZDZgQmSmOwcTFisgFNaQX/SkeMHSKPwZeT5Kr4ETcLX4PLLvu5r+BuA3qAQmYAkAcACExGAKAM0dPxsxOmvkDx3dhjqHJxVN0Q9RqQzrvqIWxDyDOqxpG4nsVOU1JPS0VllqS+JzA6rPrn6AgE06nIyFs9DueVEqkH+SkojzTmjgCqAuWtksjAUK5PqOmGOYIM5aCTUG9zqQcRYkaCRVZ/71oP/W13ESDgFqOqwLLhezJxccmTj5Cx1Vz1WZ35Pg88BOY8hyqQbUaAcrE3OXmE6GOILNyCwFf5REYiBR86/+0UzyHQWuDuYpwoUoyY0PRLkQe5OZ7fPzZGIarHi1LiztiO8qABXt8Ad7+5OZtwZM1zxRo4EpYvTMyQxP7LJQdqq7XJj/zJDshGhDFYhrLLJJBhnl+WCzEJ1PMiPldI1L0mu7N3QMdJUbQ7zZN3qTgY4YiwVi1+9jMePc5YrRiL1hAZoA8xLDsFwG0UuupOBAugw8I/divowJBpGqvb9GOmZhedwuI93CQMqoVcbiZop4noT8ucvqxFClaFoTEbaDh6vIE6bWwFl4sCqHfhKWmXZ+gqbKqFC1YjFZKDiZyTUTwt0DS8so9JIwJ8WutTLquUxqqbPduzJjItZWu9lE1EZoBwF+Jo+d5MJ4LRflmLSznac32cf
+  </data>
+ </layer>
+ <layer id="6" name="Tile Layer 2" width="100" height="100">
+  <data encoding="base64" compression="zstd">
+   KLUv/WBAm3UOALKHGCCQOQIhlBQhilTJfGnO0+S0/cK0kw0miznFQ6oVphO+B4sAQ+ewtnqvOckVmaTImiqo7JZqhZ/QnsfQ/Q72EABZb7lNQ4qHp8H5If/j7yV4Dp7KP1H8jZ/xt2gp8SNmn8sHgJugMHMFdACQAoIRCGqIB6EafCuz9C9gpUJVxlSxNAw1QiiTvuCCa3shqg8ZJ2Lf50Zn5XoQeZeHug5UFyeQN3BUbwp9ydeqbkRTvZJ42+Spn2S1RnuVvTL1D26Evh1VZU8oM5eiP15uFCVGm3Fqi2rGHQNVn+sV0g33efUMyXtDllQsYuRiRJ1Epa4n5Lax+0UcSLTtUXm8NmQZe3l4Sbwh/MeV6W9ljNppUf0S5Hjcu+ylPZ6JSVyKHDQTqMKdcChboThRz3lHUjWOpLr8e1lx8qSeRVzhZNQfs4OgeBBB7bfqbKj8kAcHuvKSWyavvhRvUdm2RB573ZvjWx7f6v1jnEVW0yrrvZJLkKvOCgtKPwrhtWMgQUFSDfdjuiuOzi8Gkb86lqIAqBa6f62NgNRlYGXimWhD4fysCKzei/5aWNrdW1p6nSnCqPfir2WgfefTmSCMei/030DMpiHeMVXdn8yiHvQ+yA==
+  </data>
+ </layer>
+ <objectgroup id="8" name="Object Layer 1">
+  <object id="5" x="1225.33" y="604" width="46.6667" height="25.3333"/>
+  <object id="6" x="864" y="336" width="32" height="32"/>
+  <object id="7" x="1088" y="336" width="31.3333" height="31.3333"/>
+  <object id="8" x="385" y="864" width="79.3333" height="15.6667"/>
+  <object id="9" x="496.333" y="864" width="127.667" height="16.3333"/>
+  <object id="10" x="367.333" y="624.667" width="17" height="255.333"/>
+  <object id="11" x="368.333" y="592" width="255.333" height="32"/>
+  <object id="12" x="624.333" y="705.333" width="15.6667" height="175"/>
+  <object id="13" x="640.333" y="736" width="111.667" height="16"/>
+  <object id="14" x="735.667" y="559.667" width="15.3333" height="174.667"/>
+  <object id="15" x="751.667" y="560.667" width="63.6667" height="16.6667"/>
+  <object id="16" x="816" y="545.333" width="16.6667" height="78.6667"/>
+  <object id="17" x="832.667" y="608" width="336.667" height="16"/>
+  <object id="18" x="1152.33" y="304" width="16" height="112"/>
+  <object id="19" x="800.333" y="304" width="351.667" height="32"/>
+  <object id="20" x="800.333" y="336.333" width="31.6667" height="160"/>
+  <object id="21" x="624" y="448" width="175.333" height="32"/>
+  <object id="22" x="624" y="480" width="16" height="177.333"/>
+  <object id="23" x="944.333" y="336" width="95" height="32.3333"/>
+  <object id="24" x="928.667" y="336.333" width="15" height="17"/>
+  <object id="25" x="1040" y="336" width="16.6667" height="23"/>
+  <object id="26" x="464" y="880.333" width="32" height="15.3333"/>
+  <object id="27" x="1151.33" y="448" width="16.6667" height="159.333"/>
+  <object id="30" x="385.333" y="624.667" width="14" height="15.3333"/>
+  <object id="31" x="833.333" y="593.333" width="13.3333" height="14.6667"/>
+  <object id="34" x="432" y="625.667" width="31.3333" height="14.3333"/>
+  <object id="35" x="544" y="625.333" width="31.3333" height="14.6667"/>
+  <object id="36" x="608" y="624.667" width="16" height="14.6667"/>
+  <object id="37" x="293.333" y="788.667"/>
+  <object id="38" x="968" y="400" width="48" height="22.6667"/>
+ </objectgroup>
+ <layer id="7" name="Tile Layer 3" width="100" height="100">
+  <data encoding="base64" compression="zstd">
+   KLUv/WBAmz0CANQCAABYAQAAWQEAAFoBAABbAQB1AQAAdgEAAHcBAAB4kgEAAJMBAACUAQAAlaEABiCw8xyj7451agAI9QOcVD8/ta4Z/rYB
+  </data>
+ </layer>
+</map>
