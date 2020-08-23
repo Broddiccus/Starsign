@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5234034587144174153}
   - component: {fileID: 7586638625934957424}
   - component: {fileID: 5561267767799981901}
-  - component: {fileID: 6882356652249983522}
-  - component: {fileID: 5129274619890774233}
+  - component: {fileID: 5956132200962421283}
+  - component: {fileID: 2576522116078732159}
   m_Layer: 8
   m_Name: Platform
   m_TagString: Block
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5234034587144174160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.24032602, y: 0.22500001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff1fa7339ee6c4f41bff5d0ff88b0a94, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf4bfcf29c76a6a44bb70754e168e281, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.18, y: 0.18}
+  m_DrawMode: 1
+  m_Size: {x: 1.41, y: -0.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0798274}
+  m_Offset: {x: -0.0008867979, y: 0.000246495}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.17999999, y: 0.16, z: 0.16, w: 0.17999999}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.18}
-    newSize: {x: 0.18, y: 0.18}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.41, y: -0.14}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.020345211}
+  m_Size: {x: 1.402252, y: 0.14161134}
   m_EdgeRadius: 0
 --- !u!50 &5234034587144174153
 Rigidbody2D:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
-  clickSys: {fileID: 5129274619890774233}
+  clickSys: {fileID: 0}
   face: {fileID: 5234034587144174165}
   body: {fileID: 5234034587144174162}
   level: 0
@@ -171,7 +171,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!199 &6882356652249983522
+--- !u!199 &5956132200962421283
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -190,8 +190,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 76dcf2bccdadca642a9aba3fa984c22f, type: 2}
+  - {fileID: 2100000, guid: 76dcf2bccdadca642a9aba3fa984c22f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,7 +215,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 3
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 11.27
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -235,7 +235,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!198 &5129274619890774233
+--- !u!198 &2576522116078732159
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,7 +310,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 2
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -487,7 +487,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.03
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -870,7 +870,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: -0.13}
     m_Rotation: {x: -0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 0.9999999}
+    m_Scale: {x: 1.1, y: 0.112499535, z: 0.9999999}
     placementMode: 2
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -933,7 +933,7 @@ ParticleSystem:
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
-    m_Sprite: {fileID: 21300000, guid: 20869d9b12a9eae45a73e6a037189d70, type: 3}
+    m_Sprite: {fileID: 21300000, guid: cf4bfcf29c76a6a44bb70754e168e281, type: 3}
     m_SpriteRenderer: {fileID: 6965829799058991300, guid: 82ebfa4bfda487042b6d79e840fef96e,
       type: 3}
     m_UseMeshMaterialIndex: 0
@@ -1196,11 +1196,11 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -5.416488
-          outSlope: -5.416488
+          inSlope: -6.744773
+          outSlope: -6.744773
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.06985676
+          inWeight: 0.022123873
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2

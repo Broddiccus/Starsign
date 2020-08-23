@@ -25,3 +25,5 @@ MonoBehaviour:
     keyCode: 115
   - name: Rewind
     keyCode: 101
+  - name: Pause
+    keyCode: 112

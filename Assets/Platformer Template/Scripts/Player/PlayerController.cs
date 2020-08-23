@@ -46,7 +46,7 @@ namespace Platformer
         {
             if (GameManager.Instance.isGame && !GameManager.Instance.isPause) //check Game status
             {
-                if (!GameManager.Instance.isEditing)
+                if (!GameManager.Instance.isEditing && !GameManager.Instance.isEvent)
                     Move();
                 //LadderClimb();
                 GroundCheck();
@@ -55,7 +55,7 @@ namespace Platformer
 
         private void Update()
         {
-            if (GameManager.Instance.isGame && !GameManager.Instance.isPause)
+            if (GameManager.Instance.isGame && !GameManager.Instance.isPause && !GameManager.Instance.isEvent)
             {
                 if (!GameManager.Instance.isEditing)
                 {
@@ -68,8 +68,18 @@ namespace Platformer
                 Rewind();
                 //Attack();
                 Animation();
+                Pause();
+            }
+            if (GameManager.Instance.isEvent && GameManager.Instance.isGame)
+            {
+                AdvanceDialogue();
             }
 
+        }
+        public void AdvanceDialogue()
+        {
+            if(inputManager.Jump)
+                GameManager.Instance.DisplayNextSentence();
         }
         public void Rewind()
         {
@@ -83,7 +93,11 @@ namespace Platformer
         {
             if (inputManager.Duck && isGrounded)
             {
-                //duck anim here
+                animatorController.SetBool("Duck", true);
+            }
+            else
+            {
+                animatorController.SetBool("Duck", false);
             }
         }
         //Move method
@@ -113,6 +127,7 @@ namespace Platformer
             {
                 GameManager.Instance.isEditing = !GameManager.Instance.isEditing;
                 isClimping = !isClimping;
+                animatorController.SetBool("Climping",isClimping);
             }
                 
             //if (isGrounded && inputManager.Roll && !isAttacking && !isClimping) //Check for availability rollback
@@ -134,6 +149,13 @@ namespace Platformer
                 rigid2D.velocity = Vector2.up * jumpForce;
             }
 
+        }
+        void Pause()
+        {
+            if (inputManager.Pause)
+            {
+                UIMan.Instance.Pauser();
+            }
         }
         //Attack method
         public void Attack()
@@ -204,13 +226,16 @@ namespace Platformer
         //Check ground 
         void GroundCheck()
         {
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down, 0.15f);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down, 0.35f);
 
             if (raycastHit2D.collider != null)
             {
                 if (Vector2.Distance(transform.position, raycastHit2D.point) <= raycastHit2D.distance) //if raycast 
                 {
+                    if (!isGrounded)
+                        animatorController.SetTrigger("Landing");
                     isGrounded = true; //is ground 
+                    GameObject.Find("Player").GetComponent<Rigidbody2D>().gravityScale = 1.0f;
                     Debug.DrawLine(transform.position, raycastHit2D.point); //draw line only in editor
                 }
             }

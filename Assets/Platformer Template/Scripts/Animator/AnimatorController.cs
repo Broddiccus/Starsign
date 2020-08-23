@@ -35,5 +35,9 @@ namespace Platformer
         {
             animator.SetInteger(name, value);
         }
+        public void Floaty()
+        {
+            GameObject.Find("Player").GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+        }
     }
 }
