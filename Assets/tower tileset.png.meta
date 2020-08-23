@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 5be6cabb069d1a34dba849ccc0c98369
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3315475876011958848
+    second: tower tileset_0
+  - first:
+      213: 235695225368910089
+    second: tower tileset_1
+  - first:
+      213: -3521238964829929646
+    second: tower tileset_2
+  - first:
+      213: -8638070008240097764
+    second: tower tileset_3
+  - first:
+      213: -7212478599390177475
+    second: tower tileset_4
+  - first:
+      213: -5403696368306804986
+    second: tower tileset_5
+  - first:
+      213: 4212680853496130159
+    second: tower tileset_6
+  - first:
+      213: -6855907489216503337
+    second: tower tileset_7
+  - first:
+      213: -6328958155353211691
+    second: tower tileset_8
+  - first:
+      213: 8988095095115966936
+    second: tower tileset_9
+  - first:
+      213: 4745194604586574256
+    second: tower tileset_10
+  - first:
+      213: -8231598299992490549
+    second: tower tileset_11
+  - first:
+      213: 2429770200956332794
+    second: tower tileset_12
+  - first:
+      213: -8592119349583844968
+    second: tower tileset_13
+  - first:
+      213: -5611498993072431139
+    second: tower tileset_14
+  - first:
+      213: -7055082730320663807
+    second: tower tileset_15
+  - first:
+      213: -3619803499471247480
+    second: tower tileset_16
+  - first:
+      213: 4526373519868249557
+    second: tower tileset_17
+  - first:
+      213: -4643193607891126256
+    second: tower tileset_18
+  - first:
+      213: 462872800353645388
+    second: tower tileset_19
+  - first:
+      213: -2790569837755132820
+    second: tower tileset_20
+  - first:
+      213: -7934676238675267466
+    second: tower tileset_21
+  - first:
+      213: 2676570058134580574
+    second: tower tileset_22
+  - first:
+      213: 6076025894459091239
+    second: tower tileset_23
+  - first:
+      213: -5666715482711254426
+    second: tower tileset_24
+  - first:
+      213: -6737268513213642046
+    second: tower tileset_25
+  - first:
+      213: -2587056438015772323
+    second: tower tileset_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
