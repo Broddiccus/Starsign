@@ -226,7 +226,7 @@ namespace Platformer
         //Check ground 
         void GroundCheck()
         {
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down, 0.35f);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down, 1f);
 
             if (raycastHit2D.collider != null)
             {
