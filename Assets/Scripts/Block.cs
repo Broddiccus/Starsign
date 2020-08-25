@@ -65,7 +65,6 @@ namespace Platformer
         }
         private void Lock(int y) //this will only work forward, needs to be edited.
         {
-            Debug.Log(y);
             if (y == level)
                 isLocked = false;
             if (y > level)
@@ -73,9 +72,10 @@ namespace Platformer
         }
         void StateChange()
         {
-            if (GameManager.Instance.isEditing)
+            if (GameManager.Instance.isEditing && !GameManager.Instance.isGrabbing && !isClicked)
             {
-                isClicked = !isClicked;
+                isClicked = true;
+                GameManager.Instance.isGrabbing = true;
                 if (isLocked || fader == fadeState.Faded)
                 {
                     isClicked = false;
@@ -94,9 +94,33 @@ namespace Platformer
                             break;
                     }
                 }
-                
+                return;
             }
-            
+            if (GameManager.Instance.isEditing && GameManager.Instance.isGrabbing && isClicked)
+            {
+                isClicked = false;
+                GameManager.Instance.isGrabbing = false;
+                if (isLocked || fader == fadeState.Faded)
+                {
+                    isClicked = false;
+                }
+                else
+                {
+                    switch (isClicked)
+                    {
+                        case true:
+                            weight.mass = 0.0001f;
+                            clickSys.Play();
+                            break;
+                        case false:
+                            weight.mass = 10000f;
+                            clickSys.Stop();
+                            break;
+                    }
+                }
+                return;
+            }
+
         }
         private void OnMouseDown()
         {

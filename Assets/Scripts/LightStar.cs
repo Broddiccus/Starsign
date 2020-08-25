@@ -25,8 +25,10 @@ namespace Platformer
         {
             //IF NOT CLICKED MOVE BACK AND FORTH BETWEEN TWO POINTS
             //IF CLICKED STOP DOING THAT UNTIL PUT IN POSITION
+            Debug.Log(isClicked);
             if (isClicked)
             {
+                
                 Vector3 mouseTemp = Input.mousePosition;
                 mouseTemp.z = 1;
                 transform.position = Vector3.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(mouseTemp), speed);
@@ -57,7 +59,6 @@ namespace Platformer
         }
         private void Lock(int y) //this will only work forward, needs to be edited.
         {
-            Debug.Log(y);
             if (y == level)
                 isLocked = false;
             if (y > level)
@@ -65,24 +66,49 @@ namespace Platformer
         }
         public void StateChange()
         {
-            if (GameManager.Instance.isEditing)
+            if (GameManager.Instance.isEditing && !GameManager.Instance.isGrabbing && !isClicked)
             {
-                isClicked = !isClicked;
+                GameManager.Instance.isGrabbing = true;
+                isClicked = true;
                 if (isLocked)
                 {
                     isClicked = false;
                 }
-
+                
+                switch (isClicked)
+                {
+                    case true:
+                        clickSys.Play();
+                        break;
+                    case false:
+                        clickSys.Stop();
+                        break;
+                }
+                return;
             }
-            switch (isClicked)
+            if (GameManager.Instance.isEditing && GameManager.Instance.isGrabbing && isClicked)
             {
-                case true:
-                    clickSys.Play();
-                    break;
-                case false:
-                    clickSys.Stop();
-                    break;
+                GameManager.Instance.isGrabbing = false;
+                isClicked = false;
+                if (isLocked)
+                {
+                    isClicked = false;
+                }
+                switch (isClicked)
+                {
+                    case true:
+                        clickSys.Play();
+                        break;
+                    case false:
+                        clickSys.Stop();
+                        break;
+                }
+                return;
             }
+        }
+        private void OnMouseDown()
+        {
+            StateChange();
         }
     }
 }

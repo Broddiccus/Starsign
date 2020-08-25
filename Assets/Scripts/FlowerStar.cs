@@ -6,6 +6,7 @@ namespace Platformer
     public class FlowerStar : MonoBehaviour
     {
         private bool collected = false;
+        public AudioSource sound;
         private bool collectable = true;
         public Transform followLoc;
         public Transform home;
@@ -25,13 +26,13 @@ namespace Platformer
                 case true:
                     if (Vector2.Distance(transform.position, followLoc.position) > followDist)
                     {
-                        transform.position = Vector2.MoveTowards(transform.position, followLoc.position, speed);
+                        transform.position = Vector2.MoveTowards(transform.position, followLoc.position, speed*Time.deltaTime);
                     }
                     break;
                 case false:
                     
-                        transform.position = Vector2.MoveTowards(transform.position, home.position, speed);
-                    if (Vector2.Distance(transform.position, followLoc.position) == 0)
+                        transform.position = Vector2.MoveTowards(transform.position, home.position, speed * Time.deltaTime);
+                    if (Vector2.Distance(transform.position, home.position) <= 0.1f)
                     {
                         collectable = true;
                     }
@@ -42,7 +43,7 @@ namespace Platformer
         private void Lock(int y) //this will only work forward, needs to be edited.
         {
             //SWAP BOOL TO MOVE TO HOME LOCATION
-            Debug.Log(y);
+
             if (y == level)
                 collected = false;
         }
@@ -50,6 +51,7 @@ namespace Platformer
         {
             if (collision.gameObject.tag == "Player" && !collected && collectable)
             {
+                sound.Play();
                 collectable = false;
                 collected = true;
                 GameManager.Instance.LevelChange();

@@ -12,6 +12,8 @@ public class Dialogue
     public string[] sentences;
     public int[] eventloc;
     public string[] eventname;
+    public bool endEvent;
+    public string endEventName;
 }
 
 //this is called from DialogueTrigger, which has a triggerbox attatched to it to call the GameManager and print all the dialouge stored in this class to the dialogue boxes it's holding

@@ -34,7 +34,6 @@ namespace Platformer
         }
         private void Lock(int y) //this will only work forward, needs to be edited.
         {
-            Debug.Log(y);
             if (y == level)
                 isLocked = false;
             if (y > level)
@@ -42,26 +41,49 @@ namespace Platformer
         }
         void StateChange()
         {
-            if (GameManager.Instance.isEditing)
+            if (GameManager.Instance.isEditing && !GameManager.Instance.isGrabbing && !isClicked)
             {
-                isClicked = !isClicked;
+                GameManager.Instance.isGrabbing = true;
+                isClicked = true;
                 if (isLocked)
                 {
                     isClicked = false;
                 }
-                
+                switch (isClicked)
+                {
+                    case true:
+                        weight.mass = 0.0001f;
+                        clickSys.Play();
+                        break;
+                    case false:
+                        weight.mass = 10000f;
+                        clickSys.Stop();
+                        break;
+                }
+                return;
             }
-            switch (isClicked)
+            if (GameManager.Instance.isEditing && GameManager.Instance.isGrabbing && isClicked)
             {
-                case true:
-                    weight.mass = 0.0001f;
-                    clickSys.Play();
-                    break;
-                case false:
-                    weight.mass = 10000f;
-                    clickSys.Stop();
-                    break;
+                GameManager.Instance.isGrabbing = false;
+                isClicked = false;
+                if (isLocked)
+                {
+                    isClicked = false;
+                }
+                switch (isClicked)
+                {
+                    case true:
+                        weight.mass = 0.0001f;
+                        clickSys.Play();
+                        break;
+                    case false:
+                        weight.mass = 10000f;
+                        clickSys.Stop();
+                        break;
+                }
+                return;
             }
+            
         }
         private void OnMouseDown()
         {

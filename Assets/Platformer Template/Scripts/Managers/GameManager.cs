@@ -16,11 +16,15 @@ namespace Platformer
         public bool isPause;
         public bool isEditing;
         public bool isEvent;
+        public bool isGrabbing;
+        public bool canRewind = true;
+        public bool canEdit = false;
 
         [Header("Gameplay")]
         public Level[] LevelOBJS;
         public int currLev = 0;
         public event Action<int> onLevelChange;
+        public daynight timer;
 
         [Header("Dialogue")]
         public Transform camMoveLoc;
@@ -34,6 +38,8 @@ namespace Platformer
         public EVENTCOMPENDIUM events;
         private int[] eventLoc;
         private string[] eventName;
+        private bool endEvent;
+        private string endEventName;
 
 
         void SingletonInit()
@@ -71,13 +77,14 @@ namespace Platformer
                 {
                     x.SetActive(false); //make more complicated later
                 }
+                timer.Back();
             }
             if (onLevelChange != null)
                 onLevelChange(currLev);
         }
         public void LevelChange() //call this when
         {
-
+            canEdit = true;
             currLev++;
             if (currLev <= LevelOBJS.Length)
             {
@@ -85,6 +92,7 @@ namespace Platformer
                 {
                     x.SetActive(true); //make more complicated later
                 }
+                timer.Forward();
                 
             }
             
@@ -101,6 +109,8 @@ namespace Platformer
             names.Clear();
             eventLoc = dialogue.eventloc;
             eventName = dialogue.eventname;
+            endEvent = dialogue.endEvent;
+            endEventName = dialogue.endEventName;
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
@@ -155,8 +165,16 @@ namespace Platformer
 
         void EndDialogue()
         {
-            isEvent = false;
-            popUp.SetBool("Talking", false);
+            if (!endEvent)
+            {
+                isEvent = false;
+                popUp.SetBool("Talking", false);
+            }
+            if (endEvent)
+            {
+                endEvent = false;
+                events.Invoke(endEventName, 0.0f);
+            }
             //end dialogue
         }
         public void StartGame()

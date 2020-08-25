@@ -39,7 +39,7 @@ namespace Platformer
 
         private void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform; //Find player in scene
+            player = GameObject.Find("CAMFOLLOWPOS").transform; //Find player in scene
             CamEditPOS = GameObject.Find("CamEditPOS").transform;
             cameraShake = GetComponent<CameraShakeEffect>();
             self = GetComponent<Camera>();
@@ -77,7 +77,7 @@ namespace Platformer
 
                     Vector3 newPos = new Vector3(EventPOS.position.x + offset.x, EventPOS.position.y + offset.y, -1); //Local vector get player position
 
-                    self.orthographicSize = Mathf.Lerp(self.orthographicSize, 2.0f, smoothSpeed * Time.deltaTime);
+                    //self.orthographicSize = Mathf.Lerp(self.orthographicSize, 4.0f, smoothSpeed * Time.deltaTime);
 
                     transform.position = Vector3.Lerp(transform.position, newPos, smoothSpeed * Time.deltaTime); //Set camera position smooth
 

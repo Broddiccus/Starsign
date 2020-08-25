@@ -84,7 +84,7 @@ namespace Platformer
         public void Rewind()
         {
             
-            if (inputManager.Rewind && GameManager.Instance.currLev > 0)
+            if (inputManager.Rewind && GameManager.Instance.currLev > 0 && GameManager.Instance.canRewind)
             {
                 GameManager.Instance.LevelReset();
             }
