@@ -19,7 +19,7 @@ namespace Platformer
                 eventer.Invoke(TrigName, 0f);
                 if (OneShot)
                 {
-                    Destroy(gameObject);
+                    Destroy(this);
                 }
             }
 

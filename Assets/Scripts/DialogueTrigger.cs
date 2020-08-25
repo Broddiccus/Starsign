@@ -10,6 +10,7 @@ namespace Platformer
 
         public Dialogue dialogue;
         public bool oneTime = false;
+        public bool oneTimeOBJ = false;
         public bool Examine = true;
         public bool Active = true;
         public void TriggerDialogue()
@@ -31,6 +32,8 @@ namespace Platformer
                     TriggerDialogue();
                     if (oneTime)
                         Destroy(gameObject);
+                    if (oneTimeOBJ)
+                        Destroy(this);
                 }
             }
 

@@ -125,6 +125,7 @@ namespace Platformer
         {
             if (inputManager.Roll && isGrounded)
             {
+                GameManager.Instance.isGrabbing = false;
                 GameManager.Instance.isEditing = !GameManager.Instance.isEditing;
                 isClimping = !isClimping;
                 animatorController.SetBool("Climping",isClimping);
@@ -247,7 +248,7 @@ namespace Platformer
         }
         public void Die()
         {
-            Debug.Log("died");
+
         }
 
 

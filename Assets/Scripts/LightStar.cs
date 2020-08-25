@@ -25,7 +25,7 @@ namespace Platformer
         {
             //IF NOT CLICKED MOVE BACK AND FORTH BETWEEN TWO POINTS
             //IF CLICKED STOP DOING THAT UNTIL PUT IN POSITION
-            Debug.Log(isClicked);
+
             if (isClicked)
             {
                 

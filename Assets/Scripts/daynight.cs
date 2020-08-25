@@ -17,8 +17,7 @@ public class daynight : MonoBehaviour
             }
             foreach (ParticleSystem y in Night)
             {
-                y.emissionRate = 0;
-                y.maxParticles -= 1;
+                y.Stop();
         }
         }
     }

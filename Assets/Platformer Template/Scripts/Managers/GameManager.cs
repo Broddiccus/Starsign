@@ -159,7 +159,7 @@ namespace Platformer
             foreach (char letter in sentence.ToCharArray())
             {
                 sentenceUI.text += letter;
-                yield return null;
+                yield return new WaitForSeconds(0.02f);
             }
         }
 
